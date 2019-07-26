@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Post
 from django.contrib import messages
-# from django.contrib.auth.forms import UserCreationForm
 from .forms import UserRegisterForm
 
 
@@ -17,7 +16,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
-            return redirect('blog-home')
+            return redirect('index')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
