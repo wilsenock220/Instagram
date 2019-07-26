@@ -1,24 +1,29 @@
 {% extends "layout.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container col-md-4 card p-4">
-    <form method="POST" class="text-center">
-        {% csrf_token %}
-        <fieldset class="form-group ">
-            <legend class="border-bottom mb-4">Join Today</legend>
+<div style="height: 100vh; margin-top: 2%">
+    <div class="flex-center flex-column">
 
-            {{ form|crispy }}
+        <div class="container col-md-4 card p-3">
+            <form method="POST" class="text-center">
+                {% csrf_token %}
+                <fieldset class="form-group ">
+                    <legend class="border-bottom mb-4">Join Today</legend>
+
+                    {{ form|crispy }}
 
 
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                </small>
+            </div>
         </div>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
-        </small>
     </div>
 </div>
 {% endblock content %}
