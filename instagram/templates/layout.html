@@ -8,6 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Instagram-Clone</title>
     <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -29,18 +30,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'index' %}">Home
+                        <a class="nav-link" href="{% url 'index' %}"
+                            style="font-family: 'Cookie', cursive;; font-size: 2em ; border-left:1px solid black">Instagram
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
 
-                    <form class="form-inline">
-                        <div class="md-form my-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        </div>
-                    </form>
-                </ul>
 
+                </ul>
+                <form class="form-inline">
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                </form>
                 <ul class="navbar-nav ml-auto nav-flex-icons">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
