@@ -22,6 +22,15 @@ urlpatterns = [
     url('post/new/', PostCreateView.as_view(), name='post-create'),
     url('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     url('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    url(r'^comment/(?P<post_id>\d+)$', views.comment_on, name='comment'),
+    url(r'^user/(?P<user_id>\d+)$', views.user, name='aboutuser'),
+    url(r'^like/(?P<post_id>\d+)$', views.like, name='like'),
+    url(r'^save/(?P<post_id>\d+)$', views.save, name='save'),
+    url(r'^search/(?P<name>.+)$', views.find, name='save'),
+    url(r'^follow_or_not/(?P<user_id>\d+)$',
+        views.togglefollow,
+        name='follow_or_not'),
+    url(r'^unlike/(?P<post_id>\d+)$', views.unlike, name='unlike')
 ]
 
 if settings.DEBUG:

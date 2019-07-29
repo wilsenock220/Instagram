@@ -14,7 +14,9 @@
                     <div class="card-footer">
                         <a class="mr-2" href="#">By {{ post.author }}</a>
                         <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                        <small>Likes :{{ post.like_count }}</small>
                     </div>
+
 
                 </div>
                 {% endfor %}

@@ -5,12 +5,20 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (ListView, DetailView, CreateView, UpdateView,
                                   DeleteView)
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .models import *
+from .forms import *
 
-
+@login_required(login_url='/accounts/login/')
 def index(request):
-    context = {'posts': Post.objects.all()}
-    return render(request, 'index.html', context)
+    image_form = PostForm()
+    images = Post.objects.all()
+    commentform = CommentForm()
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            request.user.profile.post(form)
+    return render(request, 'login.html', locals())
+
 
 
 def register(request):
