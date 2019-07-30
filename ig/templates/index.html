@@ -1,6 +1,6 @@
 {%extends 'base.html'%}
 {% block content %}
-<div class="flex-center flex-column">
+<div class="flex-center flex-column" style="margin-top: 7%">
 
     <div class="container">
         <div class="row">
@@ -24,28 +24,14 @@
                                 <small>
                                     <li class="list-inline-item pr-2"><a href="{% url 'image' image_id=image.id %}"><i
                                                 class="far fa-comments pr-1"></i>Comments</a></li>
+
                                 </small>
-                                <h4>Comments</h4>
-                                <div class="comments">
-                                    {% for comment in comments %}
-                                    <div class="row">
-                                        <div class="col-md-6">
 
-                                            <ul class="list-inline home-list">
-                                                <li class="list-inline-item">
-                                                    <a
-                                                        href="{% url 'profile' username=comment.user.username %}">{{comment.user.username}}</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <p>{{comment.comment}} </p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
 
-                                    {% endfor %}
-                                </div>
                             </div>
+                            <a href="#" class="container" id="insta" style="color: red"> <i class="far fa-heart"></i>
+                            </a>
+
                         </div>
                     </div>
 
@@ -59,6 +45,7 @@
         </div>
         <hr>
         {% endfor %}
+
     </div>
 </div>
 </div>
