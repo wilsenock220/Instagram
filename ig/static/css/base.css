@@ -6,9 +6,13 @@ form {
 }
 
 #insta{
-    font-family: 'Parisienne', cursive;
+    font-size: 2em;
 }
 
 #photo{
     padding-left: 500px;
+}
+#6{
+    
+    margin-left: 50%;
 }

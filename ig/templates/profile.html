@@ -12,15 +12,13 @@
             </p>
         </div>
         {% endfor %}
-        <div class="container">
+        <div class="container p-4" id="6">
             <div class="card-deck">
                 <p><a class="btn btn-outline-info" href="{% url 'upload_image' %}">Add Image</a></p>
-                <li class="list-inline-item">
-                    <a href="#" class="btn btn-outline-info">Follow</a>
-                </li>
-                <li class="list-inline-item">
-                    <span class="font-weight-bold">{{images|length}} </span> Post(s)
-                </li>
+                <p class="btn btn-outline-danger">{{images|length }} Post(s) </p>
+
+                <a href="#" class="btn btn-outline-info">Follow</a>
+
             </div>
 
         </div>
